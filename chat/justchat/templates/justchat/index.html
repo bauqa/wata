@@ -1,0 +1,26 @@
+{% extends 'justchat/base.html' %}
+
+
+{% block title %} Home {% endblock %}
+{% block content %}
+<br/>
+  {% for book in books %}
+    <h4>{{ book.name }}</h2>
+    <h5>Автор: {{ book.author }}</h3>
+    {% if book.photo1 %}
+    <img src="/media/{{book.photo1}}" class="img-fluid"/>
+    {% endif %}
+    {% if book.photo2 %}
+    <img src="/media/{{book.photo2}}" class="img-fluid"/>
+    {% endif %}
+    
+    {% if book.photo3 %}
+    <img src="/media/{{book.photo3}}" class="img-fluid"/>
+    {% endif %}
+    <p>{{ book.desk }}</p>
+    <a href="{{book.book}}" download="w3.fdsf"><button class="btn btn-success">Скачать книгу</button></a>
+    <br/>
+    <hr/>
+    <br/>
+  {% endfor %}
+{% endblock %}
